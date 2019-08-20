@@ -6,9 +6,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20190817200604_State.cs" />
+    <Compile Remove="Data\Migrations\20190817200604_State.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190820082651_newUser.cs" />
+    <Compile Remove="Data\Migrations\20190820082651_newUser.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\WhatTo\" />
+    <Folder Include="Models\RelationAndAchive\" />
+    <Folder Include="Models\PlansAndTargets\" />
+    <Folder Include="Models\Reports\" />
   </ItemGroup>
 
 </Project>

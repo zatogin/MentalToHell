@@ -4,14 +4,16 @@ using MentalToHell.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MentalToHell.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190817210519_Current")]
+    partial class Current
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,6 +34,29 @@ namespace MentalToHell.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CurrentStatuses");
+                });
+
+            modelBuilder.Entity("MentalToHell.Models.User.AppUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Nicname")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<int>("UserPersonalStateId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserPersonalStateId");
+
+                    b.ToTable("AppUser");
                 });
 
             modelBuilder.Entity("MentalToHell.Models.User.Gender", b =>
@@ -249,9 +274,6 @@ namespace MentalToHell.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -291,8 +313,6 @@ namespace MentalToHell.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -365,21 +385,12 @@ namespace MentalToHell.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("MentalToHell.Models.User.ApplicationUser", b =>
+            modelBuilder.Entity("MentalToHell.Models.User.AppUser", b =>
                 {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("Nicname")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.Property<int>("UserPersonalStateId");
-
-                    b.HasIndex("UserPersonalStateId");
-
-                    b.ToTable("ApplicationUser");
-
-                    b.HasDiscriminator().HasValue("ApplicationUser");
+                    b.HasOne("MentalToHell.Models.User.UserPersonalState", "UserPersonalState")
+                        .WithMany("AppUsers")
+                        .HasForeignKey("UserPersonalStateId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MentalToHell.Models.User.JobSatisfaction", b =>
@@ -473,14 +484,6 @@ namespace MentalToHell.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.User.ApplicationUser", b =>
-                {
-                    b.HasOne("MentalToHell.Models.User.UserPersonalState", "UserPersonalState")
-                        .WithMany("ApplicationUsers")
-                        .HasForeignKey("UserPersonalStateId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
