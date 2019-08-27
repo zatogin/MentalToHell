@@ -17,33 +17,31 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-lg">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Mental To Hell Daiary</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="UserPersonalStates" asp-action="Index">Personal</a></li>
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
-        </div>
-    </nav>
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
+    <div class="body-content main-container">
+        <div class="menu-holder">
+            <div class="hidden" id="main-menu-hidden">
+                <div class="container">
+                        <ul>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                            <li><a asp-area="" asp-controller="UserPersonalStates" asp-action="Index">Personal</a></li>
+                        </ul>
+                    <ul>
+                        <li><partial name="_LoginPartial" /></li>
+                    </ul>
+                    <button class="btn" id="menu-close">X</button>
+                </div>
+            </div>
+        
+            <button class="btn" id="menu-open">MENU</button>
+        </div>
+
         @RenderBody()
-        <hr />
+
         <footer>
             <p>&copy; 2019 - MentalToHell</p>
         </footer>
