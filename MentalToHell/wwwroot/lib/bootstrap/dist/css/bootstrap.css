@@ -44,6 +44,7 @@ template {
 }
 a {
   background-color: transparent;
+
 }
 a:active,
 a:hover {
@@ -1098,8 +1099,8 @@ a {
   color: #F62A00;
   text-decoration: none;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 60px;
 }
 a:hover,
 a:focus {
@@ -1184,10 +1185,11 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
+    font-family: 'Audiowide', cursive;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    text-align:center;
 }
 h1 small,
 h2 small,

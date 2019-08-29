@@ -8,6 +8,7 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap&subset=latin-ext" rel="stylesheet">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -26,24 +27,19 @@
                 <div class="container">
                         <ul>
                             <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                            <li><a asp-area="" asp-controller="UserPersonalStates" asp-action="Index">Personal</a></li>
                         </ul>
-                    <ul>
-                        <li><partial name="_LoginPartial" /></li>
-                    </ul>
+                    <partial name="_LoginPartial" />
                     <button class="btn" id="menu-close">X</button>
                 </div>
             </div>
-        
+            
+            <!---<a asp-area="" asp-controller="Home" asp-action="Index" class="" style="float:left;">Mental to Hell Diary</a>-->
             <button class="btn" id="menu-open">MENU</button>
         </div>
 
         @RenderBody()
 
         <footer>
-            <p>&copy; 2019 - MentalToHell</p>
         </footer>
     </div>
 

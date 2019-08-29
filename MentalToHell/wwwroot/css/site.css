@@ -1,7 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    background-color: #F1F3CE !important;
+    background-color: #323030 !important;
     overflow: hidden;
 }
 
@@ -13,35 +13,128 @@ body {
 .main-container {
     height: 96vh;
     margin: 2VH 1VW !important;
-    background-color: #DDEDED;
-    padding: 2vh 1vw;
-}
-
-.item > img {
-    height: 60vh !important;
-    width: 100vw !important;
+    background-color: #323030;
+    background-image: url(../images/write2-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    padding: 8vh 4vw;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
 }
 /*
-    Navbar
+    menu
 */
 #main-menu-hidden {
     position: absolute;
     z-index: 1000;
-    background-color: #F0810F;
-    width: 20vw;
-    height: 20vh;
-    right: 2vw;
+    background-color: #A5C05B;
+    width: 15vw;
+    height: 80vh;
+    right: 1vw;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
 }
-    #main-menu-hidden > a:hover {
-        color: #E6DF44;
-    }
+
+#main-menu-hidden > a:hover {
+    color: #E6DF44;
+}
     .menu-holder {
         width: 100%;
         height: 60px;
     }
 #menu-open {
     float: right;
+    width: 6em;
+    height: 4em;
+    font-weight: bold;
+    color: rgb(102, 0, 204);
+    background: #f2f6f8;
+    background: -moz-linear-gradient(top, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #f2f6f8), color-stop(13%, #d8e1e7), color-stop(75%, #d8e1e7), color-stop(100%, #e0eff9));
+    background: -webkit-linear-gradient(top, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
+    background: -o-linear-gradient(top, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
+    background: -ms-linear-gradient(top, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
+    background: linear-gradient(to bottom, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );
+    text-shadow: 1px 1px 2px #990000;
+    -webkit-box-shadow: 2px 2px 10px 5px #882426;
+    -moz-box-shadow: 2px 2px 10px 5px #882426;
+    box-shadow: 2px 2px 10px 5px #882426;
 }
+
+/*Header*/
+#main-header {
+    background-image: url(../images/h1main.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: auto;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
+    width: 100%;
+    height: 100px;
+    color: #A5C05B;
+}
+
+/*Main content*/
+#main-tags {
+
+}
+.main-tag {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    font-size: 3em;
+    color: #882426;
+    text-shadow: 2px 2px 2px #CEADAD;
+}
+.main-tag:nth-child(1) {
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Safari prior 9.0 */
+    transform: rotate(0deg); /* Standard syntax */
+}
+    .main-tag:nth-child(2) {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari prior 9.0 */
+        transform: rotate(0deg); /* Standard syntax */
+        top: 10.5em;
+    }
+    .main-tag:nth-child(3) {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Safari prior 9.0 */
+        transform: rotate(90deg); /* Standard syntax */
+        top: 1.5em;
+        left: 4.5em;
+    }
+}
+.main-tag:nth-child(4) {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Safari prior 9.0 */
+    transform: rotate(45deg); /* Standard syntax */
+}
+.main-tag:nth-child(5) {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari prior 9.0 */
+    transform: rotate(90deg); /* Standard syntax */
+}
+.main-tag:nth-child(6) {
+    -ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Safari prior 9.0 */
+    transform: rotate(-45deg); /* Standard syntax */
+}
+.main-tag:nth-child(7) {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Safari prior 9.0 */
+    transform: rotate(-90deg); /* Standard syntax */
+    right: 5em;
+}
+.main-tag:nth-child(8) {
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Safari prior 9.0 */
+    transform: rotate(0deg); /* Standard syntax */
+}
+
 
 footer {
     position: fixed;

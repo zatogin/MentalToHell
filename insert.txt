@@ -1,6 +1,7 @@
 ﻿read1 Photo by Clem Onojeghuo on Unsplash
 write1 Photo by Green Chameleon on Unsplash
 write2 Photo by Nick Morrison on Unsplash
+h1main Image by <a href="https://pixabay.com/users/GDJ-1086657/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1751088">Gordon Johnson</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1751088">Pixabay</a>
 
 “You can always edit a bad page. You can’t edit a blank page.”
 ― Jodi Picoult
@@ -10,3 +11,5 @@ Everybody walks past a thousand story ideas every day. The good writers are the 
 - Orson Scott
 “Reading is essential for those who seek to rise above the ordinary.” 
 – Jim Rohn
+
+
