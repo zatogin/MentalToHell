@@ -25,4 +25,10 @@
     <Folder Include="Models\Reports\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Shared\_UserLayout.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

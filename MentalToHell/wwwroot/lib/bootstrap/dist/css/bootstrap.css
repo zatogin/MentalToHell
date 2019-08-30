@@ -1096,11 +1096,11 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #F62A00;
+  /*color: #F62A00;
   text-decoration: none;
   display: block;
   width: 100px;
-  height: 60px;
+  height: 60px;*/
 }
 a:hover,
 a:focus {
