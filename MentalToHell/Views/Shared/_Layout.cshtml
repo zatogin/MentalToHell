@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body class="menu-body">
 
     <partial name="_CookieConsentPartial" />
 
@@ -25,9 +25,12 @@
         <div class="menu-holder">
             <div class="hidden" id="main-menu-hidden">
                 <div class="container">
-                        <ul>
-                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        </ul>
+                    <ul>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Genders" asp-action="Index">Gender</a></li>
+                        <li><a asp-area="" asp-controller="CurrentStatus" asp-action="Index">CurrentStatus</a></li>
+                        <li><a asp-area="" asp-controller="Sexes" asp-action="Index">Sex</a></li>
+                    </ul>
                     <partial name="_LoginPartial" />
                     <button class="btn" id="menu-close">X</button>
                 </div>

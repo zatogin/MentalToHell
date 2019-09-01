@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MentalToHell.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190820083234_User")]
-    partial class User
+    [Migration("20190901192741_Users")]
+    partial class Users
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

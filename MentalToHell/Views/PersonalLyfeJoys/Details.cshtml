@@ -1,0 +1,31 @@
+﻿@model MentalToHell.Models.User.PersonalLyfeJoy
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PersonalLyfeJoy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LifeJoyExpl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LifeJoyExpl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CurrentStatus.StatusName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
