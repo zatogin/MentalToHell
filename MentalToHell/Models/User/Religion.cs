@@ -12,7 +12,7 @@ namespace MentalToHell.Models.User
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Religion:")]
+        [Display(Name = "Религия:")]
         [DataType(DataType.Text)]
         [StringLength(100)]
         public string ReligionType { get; set; }

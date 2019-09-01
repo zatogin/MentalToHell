@@ -13,7 +13,7 @@ namespace MentalToHell.Models.User
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Explain what makes you happy:")]
+        [Display(Name = "Опишите, что вам нравится в вашей жизни:")]
         [DataType(DataType.Text)]
         [StringLength(1000)]
         public string LifeJoyExpl { get; set; }

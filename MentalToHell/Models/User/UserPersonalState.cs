@@ -24,13 +24,13 @@ namespace MentalToHell.Models.User
         public virtual PersonalLyfeJoy PersonalLyfeJoy { get; set; }
 
         [Required]
-        [Display(Name = "JobPosition:")]
+        [Display(Name = "Должность:")]
         [DataType(DataType.Text)]
         [StringLength(100)]
         public string JobPosition { get; set; }
 
         [Required]
-        [Display(Name = "JobPlace:")]
+        [Display(Name = "Место работы:")]
         [DataType(DataType.Text)]
         [StringLength(100)]
         public string JobPlace { get; set; }
@@ -44,24 +44,24 @@ namespace MentalToHell.Models.User
         public virtual Religion Religion { get; set; }
 
         [Required]
-        [Display(Name = "Birthday:")]
+        [Display(Name = "День рожденья:")]
         [DataType(DataType.DateTime)]
         public DateTime Birthday { get; set; }
 
         [Required]
-        [Display(Name = "Attitude To Life:")]
+        [Display(Name = "Отношение к жизни:")]
         [DataType(DataType.Text)]
         [StringLength(1000)]
         public string AttitudeToLife { get; set; }
 
         [Required]
-        [Display(Name = "Credo:")]
+        [Display(Name = "Кредо:")]
         [DataType(DataType.Text)]
         [StringLength(1000)]
         public string Credo { get; set; }
 
         [Required]
-        [Display(Name = "Your character:")]
+        [Display(Name = "Ваш характер:")]
         [DataType(DataType.Text)]
         [StringLength(1000)]
         public string Character { get; set; }

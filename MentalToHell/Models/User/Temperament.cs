@@ -12,7 +12,7 @@ namespace MentalToHell.Models.User
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Temperament:")]
+        [Display(Name = "Темперамент:")]
         [DataType(DataType.Text)]
         [StringLength(100)]
         public string TemperamentName { get; set; }

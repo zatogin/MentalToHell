@@ -13,7 +13,7 @@ namespace MentalToHell.Models.User
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Describe your job satisfaction:")]
+        [Display(Name = "Опишите удовлетворенность своей работой:")]
         [DataType(DataType.Text)]
         [StringLength(1000)]
         public string JobSatisfactionText { get; set; }
