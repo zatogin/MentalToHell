@@ -1,0 +1,37 @@
+﻿@model MentalToHell.Models.Reports.Motivation
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_ReportLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Motivation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MotivationText)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MotivationText)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUserId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -67,7 +67,7 @@ namespace MentalToHell.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,SexId,GenderId,PersonalLyfeJoyId,JobPosition,JobPlace,JobSatisfactionId,ReligionId,Birthday,AttitudeToLife,Credo,Character,TemperamentId")] UserPersonalState userPersonalState)
+        public async Task<IActionResult> Create([Bind("Id,SexId,GenderId,PersonalLyfeJoyId,JobPosition,JobPlace,JobSatisfactionId,ReligionId,Birthday,AttitudeToLife,Credo,Character,TemperamentId,ApplicationUserId")] UserPersonalState userPersonalState)
         {
             if (ModelState.IsValid)
             {
@@ -111,7 +111,7 @@ namespace MentalToHell.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,SexId,GenderId,PersonalLyfeJoyId,JobPosition,JobPlace,JobSatisfactionId,ReligionId,Birthday,AttitudeToLife,Credo,Character,TemperamentId")] UserPersonalState userPersonalState)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,SexId,GenderId,PersonalLyfeJoyId,JobPosition,JobPlace,JobSatisfactionId,ReligionId,Birthday,AttitudeToLife,Credo,Character,TemperamentId,ApplicationUserId")] UserPersonalState userPersonalState)
         {
             if (id != userPersonalState.Id)
             {

@@ -72,7 +72,7 @@ namespace MentalToHell.Models.User
 
         [Required]
         public int? ApplicationUserId { get; set; }
-        public virtual List<ApplicationUser> ApplicationUsers { get; set; }
+        public virtual ApplicationUser ApplicationUsers { get; set; }
 
     }
 }

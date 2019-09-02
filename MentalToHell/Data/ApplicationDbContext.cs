@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MentalToHell.Models.misc;
+using MentalToHell.Models.Reports;
 using MentalToHell.Models.User;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,11 @@ namespace MentalToHell.Data
         public DbSet<Religion> Religions { get; set; }
         public DbSet<Temperament> Temperaments { get; set; }
         public DbSet<UserPersonalState> UserPersonalStates { get; set; }
+        public DbSet<Hobby> Hobbies { get; set; }
+        public DbSet<Motivation> Motivations { get; set; }
+        public DbSet<PartyTime> PartyTimes { get; set; }
+        public DbSet<ReportMood> ReportMoods { get; set; }
+        public DbSet<Report> Reports { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

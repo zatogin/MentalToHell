@@ -36,7 +36,9 @@ namespace MentalToHell.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUsers_UserPersonalStateId",
                 table: "AspNetUsers",
-                column: "UserPersonalStateId");
+                column: "UserPersonalStateId",
+                unique: true,
+                filter: "[UserPersonalStateId] IS NOT NULL");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AspNetUsers_UserPersonalStates_UserPersonalStateId",

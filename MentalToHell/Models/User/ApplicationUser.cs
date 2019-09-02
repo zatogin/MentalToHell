@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using MentalToHell.Models.Reports;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -43,5 +44,9 @@ namespace MentalToHell.Models.User
         public int UserPersonalStateId { get; set; }
 
         public virtual UserPersonalState UserPersonalState { get; set; }
+
+        public virtual List<Hobby> Hobbies { get; set; }
+        public virtual List<Motivation> Motivations { get; set; }
+        public virtual List<Report> Reports { get; set; }
     }
 }

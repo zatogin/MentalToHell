@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\WhatTo\" />
     <Folder Include="Models\RelationAndAchive\" />
+    <Folder Include="Models\WhatTo\" />
     <Folder Include="Models\PlansAndTargets\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />

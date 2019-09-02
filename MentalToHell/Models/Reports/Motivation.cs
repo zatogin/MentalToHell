@@ -7,24 +7,24 @@ using System.Threading.Tasks;
 
 namespace MentalToHell.Models.Reports
 {
-    public class PartyTime
+    public class Motivation
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [Display(Name ="Дата:")]
+        [Display(Name = "Дата:")]
         [DataType(DataType.DateTime)]
         public DateTime DateTime { get; set; }
 
         [Required]
-        [Display(Name = "Событие:")]
+        [Display(Name = "Мотивация:")]
         [DataType(DataType.Text)]
         [StringLength(1000)]
-        public string Name { get; set; }
+        public string MotivationText { get; set; }
 
         [Required]
         public int? ApplicationUserId { get; set; }
-        public virtual List<ApplicationUser> ApplicationUsers { get; set; }
+        public virtual ApplicationUser ApplicationUsers { get; set; }
     }
 }

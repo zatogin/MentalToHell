@@ -4,14 +4,16 @@ using MentalToHell.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MentalToHell.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190902084320_user")]
+    partial class user
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,135 +34,6 @@ namespace MentalToHell.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CurrentStatuses");
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.Reports.Hobby", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ApplicationUserId")
-                        .IsRequired();
-
-                    b.Property<string>("ApplicationUsersId");
-
-                    b.Property<string>("HobbyName")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.Property<string>("HobbySpec")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUsersId");
-
-                    b.ToTable("Hobbies");
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.Reports.Motivation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ApplicationUserId")
-                        .IsRequired();
-
-                    b.Property<string>("ApplicationUsersId");
-
-                    b.Property<DateTime>("DateTime");
-
-                    b.Property<string>("MotivationText")
-                        .IsRequired()
-                        .HasMaxLength(1000);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUsersId");
-
-                    b.ToTable("Motivations");
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.Reports.PartyTime", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ApplicationUserId")
-                        .IsRequired();
-
-                    b.Property<DateTime>("DateTime");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(1000);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PartyTimes");
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.Reports.Report", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ApplicationUserId");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasMaxLength(1024);
-
-                    b.Property<DateTime>("Day");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(256);
-
-                    b.Property<string>("Image1")
-                        .HasMaxLength(256);
-
-                    b.Property<string>("Image2")
-                        .HasMaxLength(256);
-
-                    b.Property<string>("Image3")
-                        .HasMaxLength(256);
-
-                    b.Property<int>("ReportMoodId");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.Property<int>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("ReportMoodId");
-
-                    b.ToTable("Reports");
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.Reports.ReportMood", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("MoodName")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ReportMoods");
                 });
 
             modelBuilder.Entity("MentalToHell.Models.User.Gender", b =>
@@ -505,11 +378,7 @@ namespace MentalToHell.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<int?>("PartyTimeId");
-
                     b.Property<int>("UserPersonalStateId");
-
-                    b.HasIndex("PartyTimeId");
 
                     b.HasIndex("UserPersonalStateId")
                         .IsUnique()
@@ -518,32 +387,6 @@ namespace MentalToHell.Data.Migrations
                     b.ToTable("ApplicationUser");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.Reports.Hobby", b =>
-                {
-                    b.HasOne("MentalToHell.Models.User.ApplicationUser", "ApplicationUsers")
-                        .WithMany("Hobbies")
-                        .HasForeignKey("ApplicationUsersId");
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.Reports.Motivation", b =>
-                {
-                    b.HasOne("MentalToHell.Models.User.ApplicationUser", "ApplicationUsers")
-                        .WithMany("Motivations")
-                        .HasForeignKey("ApplicationUsersId");
-                });
-
-            modelBuilder.Entity("MentalToHell.Models.Reports.Report", b =>
-                {
-                    b.HasOne("MentalToHell.Models.User.ApplicationUser", "ApplicationUser")
-                        .WithMany("Reports")
-                        .HasForeignKey("ApplicationUserId");
-
-                    b.HasOne("MentalToHell.Models.Reports.ReportMood", "ReportMood")
-                        .WithMany("Reports")
-                        .HasForeignKey("ReportMoodId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MentalToHell.Models.User.JobSatisfaction", b =>
@@ -642,10 +485,6 @@ namespace MentalToHell.Data.Migrations
 
             modelBuilder.Entity("MentalToHell.Models.User.ApplicationUser", b =>
                 {
-                    b.HasOne("MentalToHell.Models.Reports.PartyTime")
-                        .WithMany("ApplicationUsers")
-                        .HasForeignKey("PartyTimeId");
-
                     b.HasOne("MentalToHell.Models.User.UserPersonalState", "UserPersonalState")
                         .WithOne("ApplicationUsers")
                         .HasForeignKey("MentalToHell.Models.User.ApplicationUser", "UserPersonalStateId")
