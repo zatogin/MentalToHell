@@ -12,6 +12,8 @@
     <Compile Remove="Data\Migrations\20190820082651_newUser.Designer.cs" />
     <Compile Remove="Data\Migrations\20190820083234_User.cs" />
     <Compile Remove="Data\Migrations\20190820083234_User.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190901192741_Users.cs" />
+    <Compile Remove="Data\Migrations\20190901192741_Users.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,7 +26,9 @@
     <Folder Include="Models\WhatTo\" />
     <Folder Include="Models\RelationAndAchive\" />
     <Folder Include="Models\PlansAndTargets\" />
-    <Folder Include="Models\Reports\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
   <ItemGroup>

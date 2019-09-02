@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MentalToHell.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190901192741_Users")]
-    partial class Users
+    [Migration("20190902083351_user")]
+    partial class user
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -139,6 +139,9 @@ namespace MentalToHell.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ApplicationUserId")
+                        .IsRequired();
 
                     b.Property<string>("AttitudeToLife")
                         .IsRequired()

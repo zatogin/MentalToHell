@@ -138,6 +138,9 @@ namespace MentalToHell.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("ApplicationUserId")
+                        .IsRequired();
+
                     b.Property<string>("AttitudeToLife")
                         .IsRequired()
                         .HasMaxLength(1000);

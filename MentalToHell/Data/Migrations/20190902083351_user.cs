@@ -3,12 +3,18 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MentalToHell.Data.Migrations
 {
-    public partial class Users : Migration
+    public partial class user : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "AppUser");
+
+            migrationBuilder.AddColumn<int>(
+                name: "ApplicationUserId",
+                table: "UserPersonalStates",
+                nullable: false,
+                defaultValue: 0);
 
             migrationBuilder.AddColumn<string>(
                 name: "Nicname",
@@ -50,6 +56,10 @@ namespace MentalToHell.Data.Migrations
             migrationBuilder.DropIndex(
                 name: "IX_AspNetUsers_UserPersonalStateId",
                 table: "AspNetUsers");
+
+            migrationBuilder.DropColumn(
+                name: "ApplicationUserId",
+                table: "UserPersonalStates");
 
             migrationBuilder.DropColumn(
                 name: "Nicname",

@@ -70,6 +70,8 @@ namespace MentalToHell.Models.User
         public int? TemperamentId { get; set; }
         public virtual Temperament Temperament { get; set; }
 
+        [Required]
+        public int? ApplicationUserId { get; set; }
         public virtual List<ApplicationUser> ApplicationUsers { get; set; }
 
     }
