@@ -1,0 +1,49 @@
+﻿@model MentalToHell.Models.RelationAndAchive.PersonalRelationYear
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_PersonalRelation.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PersonalRelationYear</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Mood)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Mood)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RelationLink)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RelationLink)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalRelation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonalRelation)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

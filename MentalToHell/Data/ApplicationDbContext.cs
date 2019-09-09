@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using MentalToHell.Models.misc;
+using MentalToHell.Models.RelationAndAchive;
 using MentalToHell.Models.Reports;
 using MentalToHell.Models.User;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MentalToHell.Models.WhatTo;
 
 namespace MentalToHell.Data
 {
@@ -30,5 +32,15 @@ namespace MentalToHell.Data
         public DbSet<ReportMood> ReportMoods { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<PersonalRelationDay> PersonalRelationDays { get; set; }
+        public DbSet<PersonalRelationWeek> PersonalRelationWeeks { get; set; }
+        public DbSet<PersonalRelationMonth> PersonalRelationMonths { get; set; }
+        public DbSet<PersonalRelationYear> PersonalRelationYears { get; set; }
+        public DbSet<MentalToHell.Models.WhatTo.ToThinkAbout> ToThinkAbout { get; set; }
+        public DbSet<MentalToHell.Models.WhatTo.WhatToRead> WhatToRead { get; set; }
+        public DbSet<MentalToHell.Models.WhatTo.WhatToStatus> WhatToStatus { get; set; }
+        public DbSet<MentalToHell.Models.WhatTo.WhatToTaste> WhatToTaste { get; set; }
+        public DbSet<MentalToHell.Models.WhatTo.WhatToWatch> WhatToWatch { get; set; }
+        public DbSet<MentalToHell.Models.WhatTo.WhereToBe> WhereToBe { get; set; }
     }
 }

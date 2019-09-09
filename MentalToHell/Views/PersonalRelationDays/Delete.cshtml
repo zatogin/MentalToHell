@@ -1,0 +1,52 @@
+﻿@model MentalToHell.Models.RelationAndAchive.PersonalRelationDay
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_PersonalRelation.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PersonalRelationDay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Mood)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Mood)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RelationLink)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RelationLink)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalRelation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonalRelation)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

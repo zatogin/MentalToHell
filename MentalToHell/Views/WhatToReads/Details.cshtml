@@ -1,0 +1,37 @@
+﻿@model MentalToHell.Models.WhatTo.WhatToRead
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_WhatTo.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WhatToRead</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ToRead)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ToRead)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

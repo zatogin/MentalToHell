@@ -1,0 +1,50 @@
+﻿@model MentalToHell.Models.WhatTo.WhatToTaste
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_WhatTo.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>WhatToTaste</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToEat" class="control-label"></label>
+                <input asp-for="ToEat" class="form-control" />
+                <span asp-validation-for="ToEat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WhereToEat" class="control-label"></label>
+                <input asp-for="WhereToEat" class="form-control" />
+                <span asp-validation-for="WhereToEat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusId" class="control-label"></label>
+                <input asp-for="StatusId" class="form-control" />
+                <span asp-validation-for="StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
