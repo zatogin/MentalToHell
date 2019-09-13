@@ -2,7 +2,8 @@
 for details on configuring this project to bundle and minify static web assets. */
 .menu-body {
     background-color: #323030 !important;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Wrapping element */
@@ -10,6 +11,13 @@ for details on configuring this project to bundle and minify static web assets. 
 .body-content {
     background-color: white;
 }
+.user-main-one {
+    background-color: #323030 !important;
+}
+#user-layout-main {
+    
+}
+
 .main-container {
     height: 96vh;
     margin: 2VH 1VW !important;
@@ -18,14 +26,17 @@ for details on configuring this project to bundle and minify static web assets. 
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
-    padding: 8vh 4vw;
+    padding: 1vh 4vw;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
     -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
     box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
 }
+#main-page {
+    margin-top: 5em;
+}
 /*
     menu
-*/
+
 #main-menu-hidden {
     position: absolute;
     z-index: 1000;
@@ -36,33 +47,32 @@ for details on configuring this project to bundle and minify static web assets. 
     -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
     -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
     box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+}*/
+.nav-menu-all {
+    -webkit-box-shadow: inset 0px 2px 5px 1px rgba(255,255,255,1);
+    -moz-box-shadow: inset 0px 2px 5px 1px rgba(255,255,255,1);
+    box-shadow: inset 0px 2px 5px 1px rgba(255,255,255,1);
+    padding-top: 10px;
+    font-size: 20px;
 }
 
-#main-menu-hidden > a:hover {
-    color: #E6DF44;
-}
-    .menu-holder {
-        width: 100%;
-        height: 60px;
-    }
-#menu-open {
+#main-login {
     float: right;
-    width: 6em;
-    height: 4em;
+}
+#main-login > ul, #main-login > form > ul {
+    list-style-type: none;
+}
+#main-login > ul > li, #main-login > form > ul > li {
+    display: inline-block;
+    margin: 10px;
+    padding: 2px;
+}
+#main-login > ul > li > a, #main-login > form > ul > li > a, #main-login > form > ul > li > button {
+    font-size: 1em !important;
+    text-decoration: none !important;
+    color: #F1F3CE;
+    text-shadow: #882426 1px 1px 4px;
     font-weight: bold;
-    color: rgb(102, 0, 204);
-    background: #f2f6f8;
-    background: -moz-linear-gradient(top, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, #f2f6f8), color-stop(13%, #d8e1e7), color-stop(75%, #d8e1e7), color-stop(100%, #e0eff9));
-    background: -webkit-linear-gradient(top, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
-    background: -o-linear-gradient(top, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
-    background: -ms-linear-gradient(top, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
-    background: linear-gradient(to bottom, #f2f6f8 0%, #d8e1e7 13%, #d8e1e7 75%, #e0eff9 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );
-    text-shadow: 1px 1px 2px #990000;
-    -webkit-box-shadow: 2px 2px 10px 5px #882426;
-    -moz-box-shadow: 2px 2px 10px 5px #882426;
-    box-shadow: 2px 2px 10px 5px #882426;
 }
 
 /*Header*/
@@ -71,68 +81,75 @@ for details on configuring this project to bundle and minify static web assets. 
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: auto;
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
+    text-shadow: 4px 4px 2px #882426;
     width: 100%;
-    height: 100px;
-    color: #A5C05B;
+    height: 200px;
+    color: #C29545;
+    font-size: 4em;
+    text-transform: uppercase;
 }
 
 /*Main content*/
 #main-tags {
-
+    background-color: #DDDEDE;
+    padding: 10px !important;
+    overflow-x: hidden;
+    overflow-y:auto; 
+}
+#main-tags > .row:nth-child(1) {
+    margin-top: 0.5em;
+}
+#main-tags > .row:nth-child(2) {
+    margin-top: 1.5em;
+}
+#main-tags > .row:nth-child(3) {
+    margin-top: 2.5em;
 }
 .main-tag {
-    margin: 0 !important;
-    padding: 0 !important;
-    position: relative;
-    font-size: 3em;
+    font-size: 1em;
     color: #882426;
     text-shadow: 2px 2px 2px #CEADAD;
 }
+
+.tag-author {
+    text-align: right !important;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 .main-tag:nth-child(1) {
-    -ms-transform: rotate(0deg); /* IE 9 */
-    -webkit-transform: rotate(0deg); /* Safari prior 9.0 */
-    transform: rotate(0deg); /* Standard syntax */
+    
 }
     .main-tag:nth-child(2) {
-        -ms-transform: rotate(0deg); /* IE 9 */
-        -webkit-transform: rotate(0deg); /* Safari prior 9.0 */
-        transform: rotate(0deg); /* Standard syntax */
-        top: 10.5em;
+        
     }
     .main-tag:nth-child(3) {
-        -ms-transform: rotate(90deg); /* IE 9 */
-        -webkit-transform: rotate(90deg); /* Safari prior 9.0 */
-        transform: rotate(90deg); /* Standard syntax */
-        top: 1.5em;
-        left: 4.5em;
+        
     }
 }
 .main-tag:nth-child(4) {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Safari prior 9.0 */
-    transform: rotate(45deg); /* Standard syntax */
+    
 }
 .main-tag:nth-child(5) {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari prior 9.0 */
-    transform: rotate(90deg); /* Standard syntax */
+    
 }
 .main-tag:nth-child(6) {
-    -ms-transform: rotate(-45deg); /* IE 9 */
-    -webkit-transform: rotate(-45deg); /* Safari prior 9.0 */
-    transform: rotate(-45deg); /* Standard syntax */
+   
 }
 .main-tag:nth-child(7) {
-    -ms-transform: rotate(-90deg); /* IE 9 */
-    -webkit-transform: rotate(-90deg); /* Safari prior 9.0 */
-    transform: rotate(-90deg); /* Standard syntax */
-    right: 5em;
+   
 }
 .main-tag:nth-child(8) {
-    -ms-transform: rotate(0deg); /* IE 9 */
-    -webkit-transform: rotate(0deg); /* Safari prior 9.0 */
-    transform: rotate(0deg); /* Standard syntax */
+    
+}
+
+.create-new {
+    text-decoration: none;
+    color: #323030;
+}
+.create-new:hover, .create-new:focus, .create-new:active {
+    text-decoration: none;
+    color: #CDBEA7;
 }
 
 

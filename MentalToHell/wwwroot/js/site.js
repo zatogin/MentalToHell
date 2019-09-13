@@ -9,3 +9,9 @@ $("#menu-open").click(function () {
 $("#menu-close").click(function () {
     $("#main-menu-hidden").addClass("hidden");
 });
+
+$("#show-state-main").click(function () {
+    $("#state-main").slideUp();
+    $("#statemain-hidden").removeClass("hidden");
+    $("#statemain-hidden").slideDown();
+});

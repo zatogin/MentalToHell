@@ -5,104 +5,129 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>A</h2>
+<div id="state-main" class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <a asp-area="" asp-controller="JobSatisfactions" asp-action="Index">Job</a>
+        </div>
+        <div class="col-sm-4">
+            <a asp-area="" asp-controller="PersonalLyfeJoys" asp-action="Index">Joy</a>
+        </div>
+        <div class="col-sm-4">
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">User</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <a href="#" id="show-state-main">Personal</a>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Sex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PersonalLyfeJoy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JobPosition)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JobPlace)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JobSatisfaction)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Religion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Birthday)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AttitudeToLife)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Credo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Character)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Temperament)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApplicationUserId)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sex.SexName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender.GenderName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonalLyfeJoy.LifeJoyExpl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JobPosition)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JobPlace)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JobSatisfaction.JobSatisfactionText)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Religion.ReligionType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Birthday)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AttitudeToLife)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Credo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Character)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Temperament.TemperamentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApplicationUserId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div id="statemain-hidden" class="hidden">
+
+    <p>
+        <a asp-action="Create" class="create-new">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonalLyfeJoy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobPosition)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobPlace)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobSatisfaction)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Religion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Birthday)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AttitudeToLife)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Credo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Character)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Temperament)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUserId)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex.SexName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender.GenderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonalLyfeJoy.LifeJoyExpl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobPosition)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobPlace)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobSatisfaction.JobSatisfactionText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Religion.ReligionType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AttitudeToLife)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Character)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Temperament.TemperamentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationUserId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="create-new">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="create-new">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="create-new">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
