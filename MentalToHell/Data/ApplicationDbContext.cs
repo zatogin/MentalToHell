@@ -42,5 +42,6 @@ namespace MentalToHell.Data
         public DbSet<MentalToHell.Models.WhatTo.WhatToTaste> WhatToTaste { get; set; }
         public DbSet<MentalToHell.Models.WhatTo.WhatToWatch> WhatToWatch { get; set; }
         public DbSet<MentalToHell.Models.WhatTo.WhereToBe> WhereToBe { get; set; }
+        public DbSet<InfoTable> InfoTables { get; set; }
     }
 }

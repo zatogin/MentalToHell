@@ -5,31 +5,34 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-<h2>A</h2>
+<div class="header-choose">
+    <h1>Добро пожаловать!</h1>
+    <h3>Выберите тему для заполнения:</h3>
+</div>
+<div class="header-chosen">
+    <h3>Добро пожаловать в личный профиль!</h3>
+</div>
+
 <div id="state-main" class="container">
     <div class="row">
-        <div class="col-sm-4">
-            <a asp-area="" asp-controller="JobSatisfactions" asp-action="Index">Job</a>
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="" asp-controller="JobSatisfactions" asp-action="Index">Удовлетворенность работой</a>
         </div>
-        <div class="col-sm-4">
-            <a asp-area="" asp-controller="PersonalLyfeJoys" asp-action="Index">Joy</a>
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="" asp-controller="PersonalLyfeJoys" asp-action="Index">Удовлетворенность жизнью</a>
         </div>
-        <div class="col-sm-4">
-            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">User</a>
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Профиль</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-4">
-            <a href="#" id="show-state-main">Personal</a>
-        </div>
-        <div class="col-sm-4">
+        <div class="col-sm-12 state-main-item">
+            <a href="#" class="show-state-main">Анкета личности</a>
         </div>
     </div>
 </div>
 
-<div id="statemain-hidden" class="hidden">
+<div class="statemain-hidden hidden">
 
     <p>
         <a asp-action="Create" class="create-new">Create New</a>

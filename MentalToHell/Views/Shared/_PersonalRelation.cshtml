@@ -18,9 +18,37 @@
     </environment>
 </head>
 <body class="menu-body">
+    <nav class="navbar navbar-inverse nav-menu-all">
+        <div class="menu-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ДОМОЙ</a>
+            </div>
+            <div class="navbar-collapse collapse menu-big-all">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="UserPersonalStates" asp-action="Index">ЛИЧНЫЙ ПРОФИЛЬ</a></li>
+                    <li><a asp-area="" asp-controller="Reports" asp-action="Index">ДНЕВНИК</a></li>
+                    <li><a asp-area="" asp-controller="PersonalRelationDays" asp-action="Index">ДНЕВНИК ОТНОШЕНИЯ</a></li>
+                    <li><a asp-area="" asp-controller="ToThinkAbouts" asp-action="Index">ЧТО СДЕЛАТЬ</a></li>
+                    <li><a asp-area="" asp-controller="InfoTables" asp-action="Index">ТАБЛИЦА РЕСУРСОВ</a></li>
+                </ul>
+                <div id="main-login">
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <partial name="_CookieConsentPartial" />
-    <div class="body-content ">
+
+    <div class="body-content" id="user-layout-main">
         @RenderBody()
         <footer></footer>
     </div>

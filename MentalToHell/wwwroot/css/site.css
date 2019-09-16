@@ -10,12 +10,14 @@ for details on configuring this project to bundle and minify static web assets. 
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     background-color: white;
+    overflow-x: hidden;
+    padding: 0 2em;
 }
 .user-main-one {
     background-color: #323030 !important;
 }
 #user-layout-main {
-    
+    overflow-y: hidden;
 }
 
 .main-container {
@@ -33,6 +35,9 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 #main-page {
     margin-top: 5em;
+}
+#user-layout-main > .container {
+    width: 92vw !important;
 }
 /*
     menu
@@ -75,6 +80,23 @@ for details on configuring this project to bundle and minify static web assets. 
     font-weight: bold;
 }
 
+.nav-menu-all {
+    background-color: #CDBEA7;
+    border-radius: 0 !important;
+}
+.menu-big-all > ul > li {
+    padding-top: 10px;
+    margin: 0 10px;
+}
+.menu-big-all > ul > li > a {
+    font-size: 0.8em !important;
+    font-weight: bold;
+    color: #882426 !important;
+}
+.menu-big-all > ul > li > a:hover, .menu-big-all > ul > li > a:active {
+    border-bottom: 1px dotted #fff;
+    color: #ffffff !important;
+}
 /*Header*/
 #main-header {
     background-image: url(../images/h1main.svg);
@@ -94,7 +116,12 @@ for details on configuring this project to bundle and minify static web assets. 
     background-color: #DDDEDE;
     padding: 10px !important;
     overflow-x: hidden;
-    overflow-y:auto; 
+    overflow-y: auto;
+    border-radius: 25px 25px 25px 25px;
+    -moz-border-radius: 25px 25px 25px 25px;
+    -webkit-border-radius: 25px 25px 25px 25px;
+    border: 5px solid #000000;
+    text-align: center;
 }
 #main-tags > .row:nth-child(1) {
     margin-top: 0.5em;
@@ -106,41 +133,43 @@ for details on configuring this project to bundle and minify static web assets. 
     margin-top: 2.5em;
 }
 .main-tag {
+    font-size: 1.6em;
+    padding:10px;
+    color: #882426;
+    text-shadow: 2px 2px 2px #CEADAD;
+}
+.low-main-tag {
     font-size: 1em;
     color: #882426;
     text-shadow: 2px 2px 2px #CEADAD;
 }
-
 .tag-author {
     text-align: right !important;
     display: block;
     font-size: 1.5em;
     font-weight: bold;
 }
-.main-tag:nth-child(1) {
-    
+.header-chosen {
+    display: none;
 }
-    .main-tag:nth-child(2) {
-        
-    }
-    .main-tag:nth-child(3) {
-        
-    }
+#state-main {
+    font-family: 'Audiowide', cursive;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 2em 2em;
+    overflow-y: hidden;
 }
-.main-tag:nth-child(4) {
-    
+.state-main-item {
+    text-align: center;
+    margin-top: 1em;
 }
-.main-tag:nth-child(5) {
-    
+.state-main-item > a {
+    text-decoration: none;
+    color: #011A27;
 }
-.main-tag:nth-child(6) {
-   
-}
-.main-tag:nth-child(7) {
-   
-}
-.main-tag:nth-child(8) {
-    
+.state-main-item > a:hover, .state-main-item > a:active {
+    text-decoration: none;
+    color: #046295;
 }
 
 .create-new {

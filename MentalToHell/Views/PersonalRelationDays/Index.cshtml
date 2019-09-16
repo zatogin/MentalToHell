@@ -5,56 +5,84 @@
     Layout = "~/Views/Shared/_PersonalRelation.cshtml";
 }
 
-<h2>Index</h2>
+<div class="header-choose">
+    <h1>Добро пожаловать!</h1>
+    <h3>Выберите тему для заполнения:</h3>
+</div>
+<div class="header-chosen">
+    <h3>Добро пожаловать в Дневник!</h3>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Day)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mood)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RelationLink)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PersonalRelation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Day)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mood)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RelationLink)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonalRelation)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div id="state-main" class="container">
+    <div class="row">
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="" asp-controller="PersonalRelationWeeks" asp-action="Index">Отношенте к недели</a>
+        </div>
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="" asp-controller="PersonalRelationMonths" asp-action="Index">Отношенте к месяцу</a>
+        </div>
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="" asp-controller="PersonalRelationYears" asp-action="Index">Отношенте к месяцу</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 state-main-item">
+            <a href="#" class="show-state-main">Отношенте к сегодняшнему дню</a>
+        </div>
+    </div>
+</div>
+
+<div class="statemain-hidden hidden">
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Day)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mood)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RelationLink)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonalRelation)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mood)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RelationLink)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PersonalRelation)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

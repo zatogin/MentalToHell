@@ -5,50 +5,81 @@
     Layout = "~/Views/Shared/_WhatTo.cshtml";
 }
 
-<h2>Index</h2>
+<div class="header-choose">
+    <h1>Добро пожаловать!</h1>
+    <h3>Выберите тему для заполнения:</h3>
+</div>
+<div class="header-chosen">
+    <h3>Добро пожаловать в Дневник!</h3>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ToThinkKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WhatText)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StatusId)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToThinkKey)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WhatText)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StatusId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div id="state-main" class="container">
+    <div class="row">
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="" asp-controller="WhatToReads" asp-action="Index">Что почитать?</a>
+        </div>
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="" asp-controller="WhatToTastes" asp-action="Index">Что попробовать?</a>
+        </div>
+        <div class="col-sm-4 state-main-item">
+            <a asp-area="" asp-controller="WhereToBes" asp-action="Index">Где побывать?</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 state-main-item">
+            <a asp-area="" asp-controller="WhatToWatches" asp-action="Index">Что посмоьреь?</a>
+        </div>
+        <div class="col-sm-6 state-main-item">
+            <a href="#" class="show-state-main">О чем подумать?</a>
+        </div>
+    </div>
+</div>
+
+<div class="statemain-hidden hidden">
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ToThinkKey)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WhatText)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StatusId)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ToThinkKey)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WhatText)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StatusId)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

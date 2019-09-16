@@ -29,23 +29,25 @@
     <partial name="_CookieConsentPartial" />
 
     <nav class="navbar navbar-inverse nav-menu-all">
-        <div class="container">
+        <div class="menu-container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">HOME</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ДОМОЙ</a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse menu-big-all">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="UserPersonalStates" asp-action="Index">State</a></li>
-                    <li><a asp-area="" asp-controller="Reports" asp-action="Index">Report</a></li>
-                    <li><a asp-area="" asp-controller="PersonalRelationDays" asp-action="Index">Relation</a></li>
-                    <li><a asp-area="" asp-controller="ToThinkAbouts" asp-action="Index">To do</a></li>
+                    <li><a asp-area="" asp-controller="UserPersonalStates" asp-action="Index">ЛИЧНЫЙ ПРОФИЛЬ</a></li>
+                    <li><a asp-area="" asp-controller="Reports" asp-action="Index">ДНЕВНИК</a></li>
+                    <li><a asp-area="" asp-controller="PersonalRelationDays" asp-action="Index">ДНЕВНИК ОТНОШЕНИЯ</a></li>
+                    <li><a asp-area="" asp-controller="ToThinkAbouts" asp-action="Index">ЧТО СДЕЛАТЬ</a></li>
+                    <li><a asp-area="" asp-controller="InfoTables" asp-action="Index">ТАБЛИЦА РЕСУРСОВ</a></li>
                 </ul>
                 <div id="main-login">
                     <partial name="_LoginPartial" />
@@ -56,7 +58,7 @@
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content" id="user-layout-main">
+    <div class="body-content" id="user-layout-main">
         @RenderBody()
         <footer></footer>
     </div>

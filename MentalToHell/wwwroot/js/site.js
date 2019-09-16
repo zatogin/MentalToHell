@@ -10,8 +10,10 @@ $("#menu-close").click(function () {
     $("#main-menu-hidden").addClass("hidden");
 });
 
-$("#show-state-main").click(function () {
-    $("#state-main").slideUp();
-    $("#statemain-hidden").removeClass("hidden");
-    $("#statemain-hidden").slideDown();
+$(".show-state-main").click(function () {
+    $(".state-main").slideUp();
+    $(".header-choose").slideUp();
+    $(".statemain-hidden").slideDown().delay(1000);
+    $(".header-chosen").slideDown();
+    $(".statemain-hidden").removeClass("hidden").delay(800);
 });
