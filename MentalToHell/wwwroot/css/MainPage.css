@@ -1,0 +1,69 @@
+﻿.menu-body {
+    background-color: #20232A !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.main-container {
+    height: 96vh;
+    margin: 2VH 1VW !important;
+    background-color: #ACBEBE;
+    /*background-image: url(../images/write2-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;*/
+    padding: 1vh 4vw;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #A01D26;
+}
+h2 > a {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #A01D26 !important;
+    font-size: 30px;
+    text-decoration: none;
+}
+h2 > a:hover, h2 >a :focus, h2 > a:active {
+    text-decoration: none;
+    color: #410c0f !important;
+}
+#main-page {
+    margin-top: 5em;
+}
+
+#main-login {
+    float: right;
+}
+#main-login > ul, #main-login > form > ul {
+    list-style-type: none;
+}
+#main-login > ul > li, #main-login > form > ul > li {
+    display: inline-block;
+    margin: 10px;
+    padding: 2px;
+}
+#main-login > ul > li > a, #main-login > form > ul > li > a, #main-login > form > ul > li > button {
+    font-size: 1em !important;
+    text-decoration: none !important;
+    color: #A01D26;
+    text-shadow: #882426 1px 1px 4px;
+    font-weight: bold;
+}
+#main-header {
+    background-image: url(../images/h1main.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: auto;
+    width: 100%;
+    height: 200px;
+    font-size: 4em;
+}
+
+/*Main content*/
+.panel-defaul, .panel {
+    background-color: #F4F4EF !important;
+    border-color: #ccc;
+}

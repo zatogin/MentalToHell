@@ -61,6 +61,7 @@ dfn {
   font-style: italic;
 }
 h1 {
+
   margin: .67em 0;
   font-size: 2em;
 }
@@ -1184,11 +1185,11 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: 'Audiowide', cursive;
-    font-weight: 500;
+    
+    font-weight: bold;
     line-height: 1.1;
     color: inherit;
-    text-align:center;
+    text-align: center;
 }
 h1 small,
 h2 small,

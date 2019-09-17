@@ -1,10 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-.menu-body {
-    background-color: #323030 !important;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -18,23 +14,6 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 #user-layout-main {
     overflow-y: hidden;
-}
-
-.main-container {
-    height: 96vh;
-    margin: 2VH 1VW !important;
-    background-color: #323030;
-    background-image: url(../images/write2-min.jpg);
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-    padding: 1vh 4vw;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
-    box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
-}
-#main-page {
-    margin-top: 5em;
 }
 #user-layout-main > .container {
     width: 92vw !important;
@@ -61,25 +40,6 @@ for details on configuring this project to bundle and minify static web assets. 
     font-size: 20px;
 }
 
-#main-login {
-    float: right;
-}
-#main-login > ul, #main-login > form > ul {
-    list-style-type: none;
-}
-#main-login > ul > li, #main-login > form > ul > li {
-    display: inline-block;
-    margin: 10px;
-    padding: 2px;
-}
-#main-login > ul > li > a, #main-login > form > ul > li > a, #main-login > form > ul > li > button {
-    font-size: 1em !important;
-    text-decoration: none !important;
-    color: #F1F3CE;
-    text-shadow: #882426 1px 1px 4px;
-    font-weight: bold;
-}
-
 .nav-menu-all {
     background-color: #CDBEA7;
     border-radius: 0 !important;
@@ -98,57 +58,7 @@ for details on configuring this project to bundle and minify static web assets. 
     color: #ffffff !important;
 }
 /*Header*/
-#main-header {
-    background-image: url(../images/h1main.svg);
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: auto;
-    text-shadow: 4px 4px 2px #882426;
-    width: 100%;
-    height: 200px;
-    color: #C29545;
-    font-size: 4em;
-    text-transform: uppercase;
-}
 
-/*Main content*/
-#main-tags {
-    background-color: #DDDEDE;
-    padding: 10px !important;
-    overflow-x: hidden;
-    overflow-y: auto;
-    border-radius: 25px 25px 25px 25px;
-    -moz-border-radius: 25px 25px 25px 25px;
-    -webkit-border-radius: 25px 25px 25px 25px;
-    border: 5px solid #000000;
-    text-align: center;
-}
-#main-tags > .row:nth-child(1) {
-    margin-top: 0.5em;
-}
-#main-tags > .row:nth-child(2) {
-    margin-top: 1.5em;
-}
-#main-tags > .row:nth-child(3) {
-    margin-top: 2.5em;
-}
-.main-tag {
-    font-size: 1.6em;
-    padding:10px;
-    color: #882426;
-    text-shadow: 2px 2px 2px #CEADAD;
-}
-.low-main-tag {
-    font-size: 1em;
-    color: #882426;
-    text-shadow: 2px 2px 2px #CEADAD;
-}
-.tag-author {
-    text-align: right !important;
-    display: block;
-    font-size: 1.5em;
-    font-weight: bold;
-}
 .header-chosen {
     display: none;
 }
