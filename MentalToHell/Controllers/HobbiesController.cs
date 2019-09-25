@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MentalToHell.Data;
 using MentalToHell.Models.Reports;
+using MentalToHell.Models.User;
+using Microsoft.AspNetCore.Identity;
 
 namespace MentalToHell.Controllers
 {
@@ -46,7 +48,8 @@ namespace MentalToHell.Controllers
         // GET: Hobbies/Create
         public IActionResult Create()
         {
-            return View();
+            ApplicationUser user = new ApplicationUser() { };
+            return View(user);
         }
 
         // POST: Hobbies/Create

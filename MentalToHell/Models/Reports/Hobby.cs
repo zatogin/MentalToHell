@@ -25,7 +25,7 @@ namespace MentalToHell.Models.Reports
         public string HobbyName { get; set; }
 
         [Required]
-        public int? ApplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; }
         public virtual ApplicationUser ApplicationUsers { get; set; }
     }
 }

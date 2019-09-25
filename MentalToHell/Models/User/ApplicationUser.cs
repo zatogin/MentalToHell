@@ -12,35 +12,7 @@ namespace MentalToHell.Models.User
 {
     public class ApplicationUser : IdentityUser
     {
-        private int id;
-
-        public int GetId()
-        {
-            return id;
-        }
-
-        public void SetId(int value)
-        {
-            id = value;
-        }
-
-        [Required]
-        [Display(Name = "Nicname:")]
-        [DataType(DataType.Text)]
-        [StringLength(100)]
-        public string Nicname { get; set; }
-
-        private string email;
-
-        public string GetEmail()
-        {
-            return email;
-        }
-
-        public void SetEmail(string value)
-        {
-            email = value;
-        }
+        public int Id { get; set; }
 
         [Required]
         public int UserPersonalStateId { get; set; }
