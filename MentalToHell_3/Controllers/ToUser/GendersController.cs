@@ -5,30 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MentalToHell.Data;
-using MentalToHell.Models.Reports;
-using MentalToHell.Models.User;
-using Microsoft.AspNetCore.Identity;
+using MentalToHell_3.Data;
+using MentalToHell_3.Models.Users.Misc;
 
-namespace MentalToHell.Controllers
+namespace MentalToHell_3.Controllers.ToUser
 {
-    public class HobbiesController : Controller
+    public class GendersController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-
-        public HobbiesController(ApplicationDbContext context)
+        public GendersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Hobbies
+        // GET: Genders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Hobbies.ToListAsync());
+            return View(await _context.Genders.ToListAsync());
         }
 
-        // GET: Hobbies/Details/5
+        // GET: Genders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,40 +33,39 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies
+            var gender = await _context.Genders
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (hobby == null)
+            if (gender == null)
             {
                 return NotFound();
             }
 
-            return View(hobby);
+            return View(gender);
         }
 
-        // GET: Hobbies/Create
+        // GET: Genders/Create
         public IActionResult Create()
         {
-            ApplicationUser user = new ApplicationUser() { };
-            return View(user);
+            return View();
         }
 
-        // POST: Hobbies/Create
+        // POST: Genders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,HobbySpec,HobbyName,ApplicationUserId")] Hobby hobby)
+        public async Task<IActionResult> Create([Bind("Id,GenderName")] Gender gender)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(hobby);
+                _context.Add(gender);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(hobby);
+            return View(gender);
         }
 
-        // GET: Hobbies/Edit/5
+        // GET: Genders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,22 +73,22 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies.FindAsync(id);
-            if (hobby == null)
+            var gender = await _context.Genders.FindAsync(id);
+            if (gender == null)
             {
                 return NotFound();
             }
-            return View(hobby);
+            return View(gender);
         }
 
-        // POST: Hobbies/Edit/5
+        // POST: Genders/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,HobbySpec,HobbyName,ApplicationUserId")] Hobby hobby)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,GenderName")] Gender gender)
         {
-            if (id != hobby.Id)
+            if (id != gender.Id)
             {
                 return NotFound();
             }
@@ -101,12 +97,12 @@ namespace MentalToHell.Controllers
             {
                 try
                 {
-                    _context.Update(hobby);
+                    _context.Update(gender);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HobbyExists(hobby.Id))
+                    if (!GenderExists(gender.Id))
                     {
                         return NotFound();
                     }
@@ -117,10 +113,10 @@ namespace MentalToHell.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(hobby);
+            return View(gender);
         }
 
-        // GET: Hobbies/Delete/5
+        // GET: Genders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -128,30 +124,30 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies
+            var gender = await _context.Genders
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (hobby == null)
+            if (gender == null)
             {
                 return NotFound();
             }
 
-            return View(hobby);
+            return View(gender);
         }
 
-        // POST: Hobbies/Delete/5
+        // POST: Genders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var hobby = await _context.Hobbies.FindAsync(id);
-            _context.Hobbies.Remove(hobby);
+            var gender = await _context.Genders.FindAsync(id);
+            _context.Genders.Remove(gender);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool HobbyExists(int id)
+        private bool GenderExists(int id)
         {
-            return _context.Hobbies.Any(e => e.Id == id);
+            return _context.Genders.Any(e => e.Id == id);
         }
     }
 }

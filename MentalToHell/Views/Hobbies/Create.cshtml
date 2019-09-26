@@ -1,5 +1,6 @@
 ﻿@model MentalToHell.Models.Reports.Hobby
-
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<MentalToHell.Models.User.ApplicationUser> UserManager
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_ReportLayout.cshtml";
@@ -25,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApplicationUserId" class="control-label"></label>
-                <input asp-for="ApplicationUserId" class="form-control" value="" readonly />
+                <input asp-for="ApplicationUserId" class="form-control" value="@UserManager.FindByNameAsync(UserManager.GetUserId(User)).Result.Id" readonly />
                 <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
             </div>
             <div class="form-group">

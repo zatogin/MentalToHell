@@ -4,14 +4,16 @@ using MentalToHell_3.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MentalToHell_3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190925201618_ToUserModel")]
+    partial class ToUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,9 +110,6 @@ namespace MentalToHell_3.Migrations
 
                     b.Property<int>("ApplicationUserId");
 
-                    b.Property<string>("JobDate")
-                        .IsRequired();
-
                     b.Property<string>("JobSatisfactionText")
                         .IsRequired()
                         .HasMaxLength(1000);
@@ -129,9 +128,6 @@ namespace MentalToHell_3.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("ApplicationUserId");
-
-                    b.Property<string>("JobDate")
-                        .IsRequired();
 
                     b.Property<string>("LifeJoyExpl")
                         .IsRequired()

@@ -5,30 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MentalToHell.Data;
-using MentalToHell.Models.Reports;
-using MentalToHell.Models.User;
-using Microsoft.AspNetCore.Identity;
+using MentalToHell_3.Data;
+using MentalToHell_3.Models;
 
-namespace MentalToHell.Controllers
+namespace MentalToHell_3.Controllers.ToUser
 {
-    public class HobbiesController : Controller
+    public class ApplicationUsersController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-
-        public HobbiesController(ApplicationDbContext context)
+        public ApplicationUsersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Hobbies
+        // GET: ApplicationUsers
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Hobbies.ToListAsync());
+            return View(await _context.ApplicationUser.ToListAsync());
         }
 
-        // GET: Hobbies/Details/5
+        // GET: ApplicationUsers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,40 +33,39 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies
+            var applicationUser = await _context.ApplicationUser
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (hobby == null)
+            if (applicationUser == null)
             {
                 return NotFound();
             }
 
-            return View(hobby);
+            return View(applicationUser);
         }
 
-        // GET: Hobbies/Create
+        // GET: ApplicationUsers/Create
         public IActionResult Create()
         {
-            ApplicationUser user = new ApplicationUser() { };
-            return View(user);
+            return View();
         }
 
-        // POST: Hobbies/Create
+        // POST: ApplicationUsers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,HobbySpec,HobbyName,ApplicationUserId")] Hobby hobby)
+        public async Task<IActionResult> Create([Bind("NicName,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] ApplicationUser applicationUser)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(hobby);
+                _context.Add(applicationUser);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(hobby);
+            return View(applicationUser);
         }
 
-        // GET: Hobbies/Edit/5
+        // GET: ApplicationUsers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,22 +73,22 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies.FindAsync(id);
-            if (hobby == null)
+            var applicationUser = await _context.ApplicationUser.FindAsync(id);
+            if (applicationUser == null)
             {
                 return NotFound();
             }
-            return View(hobby);
+            return View(applicationUser);
         }
 
-        // POST: Hobbies/Edit/5
+        // POST: ApplicationUsers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,HobbySpec,HobbyName,ApplicationUserId")] Hobby hobby)
+        public async Task<IActionResult> Edit(int id, [Bind("NicName,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] ApplicationUser applicationUser)
         {
-            if (id != hobby.Id)
+            if (id != applicationUser.Id)
             {
                 return NotFound();
             }
@@ -101,12 +97,12 @@ namespace MentalToHell.Controllers
             {
                 try
                 {
-                    _context.Update(hobby);
+                    _context.Update(applicationUser);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HobbyExists(hobby.Id))
+                    if (!ApplicationUserExists(applicationUser.Id))
                     {
                         return NotFound();
                     }
@@ -117,10 +113,10 @@ namespace MentalToHell.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(hobby);
+            return View(applicationUser);
         }
 
-        // GET: Hobbies/Delete/5
+        // GET: ApplicationUsers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -128,30 +124,30 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies
+            var applicationUser = await _context.ApplicationUser
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (hobby == null)
+            if (applicationUser == null)
             {
                 return NotFound();
             }
 
-            return View(hobby);
+            return View(applicationUser);
         }
 
-        // POST: Hobbies/Delete/5
+        // POST: ApplicationUsers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var hobby = await _context.Hobbies.FindAsync(id);
-            _context.Hobbies.Remove(hobby);
+            var applicationUser = await _context.ApplicationUser.FindAsync(id);
+            _context.ApplicationUser.Remove(applicationUser);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool HobbyExists(int id)
+        private bool ApplicationUserExists(int id)
         {
-            return _context.Hobbies.Any(e => e.Id == id);
+            return _context.ApplicationUser.Any(e => e.Id == id);
         }
     }
 }

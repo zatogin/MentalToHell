@@ -1,0 +1,101 @@
+﻿* {
+    box-sizing: border-box;
+}
+html {
+    width: 100vw;
+    min-height: 100vh;
+}
+body {
+}
+
+.user-container {
+    
+}
+#state-table, .welcome-to-page {
+    opacity: 0;
+}
+.user-header {
+    margin-top: 3em;
+}
+#user-menu {
+    top: 6em;
+    position: relative;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    text-align: center;
+    color: #A01D26;
+    font-weight: bold !important;
+}
+#state-table, #state-table > table {
+    text-align: center;
+    -webkit-animation: fadein 4s forwards; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 4s forwards; /* Firefox < 16 */
+        -ms-animation: fadein 4s forwards; /* Internet Explorer */
+         -o-animation: fadein 4s forwards; /* Opera < 12.1 */
+            animation: fadein 4s forwards;
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+#start-list > li > ul {
+    list-style-type: none;
+    text-align: center;
+}
+#start-list > li > ul > li > a {
+    
+}

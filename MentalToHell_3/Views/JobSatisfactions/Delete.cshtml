@@ -1,0 +1,40 @@
+﻿@model MentalToHell_3.Models.Users.JobSatisfaction
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/Model/_Users.cshtml";
+}
+
+<h2>Удалить запись</h2>
+
+<h3>Вы уверены??</h3>
+<div>
+    <h4>Удовлетворенность работой</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUsers)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUsers.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobSatisfactionText)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobSatisfactionText)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-default" /> |
+        <a asp-action="Index">Верниться к списку</a>
+    </form>
+</div>

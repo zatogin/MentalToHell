@@ -5,30 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MentalToHell.Data;
-using MentalToHell.Models.Reports;
-using MentalToHell.Models.User;
-using Microsoft.AspNetCore.Identity;
+using MentalToHell_3.Data;
+using MentalToHell_3.Models.Users.Misc;
 
-namespace MentalToHell.Controllers
+namespace MentalToHell_3.Controllers.ToUser
 {
-    public class HobbiesController : Controller
+    public class TemperamentsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-
-        public HobbiesController(ApplicationDbContext context)
+        public TemperamentsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Hobbies
+        // GET: Temperaments
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Hobbies.ToListAsync());
+            return View(await _context.Temperaments.ToListAsync());
         }
 
-        // GET: Hobbies/Details/5
+        // GET: Temperaments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,40 +33,39 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies
+            var temperament = await _context.Temperaments
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (hobby == null)
+            if (temperament == null)
             {
                 return NotFound();
             }
 
-            return View(hobby);
+            return View(temperament);
         }
 
-        // GET: Hobbies/Create
+        // GET: Temperaments/Create
         public IActionResult Create()
         {
-            ApplicationUser user = new ApplicationUser() { };
-            return View(user);
+            return View();
         }
 
-        // POST: Hobbies/Create
+        // POST: Temperaments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,HobbySpec,HobbyName,ApplicationUserId")] Hobby hobby)
+        public async Task<IActionResult> Create([Bind("Id,TemperamentName")] Temperament temperament)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(hobby);
+                _context.Add(temperament);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(hobby);
+            return View(temperament);
         }
 
-        // GET: Hobbies/Edit/5
+        // GET: Temperaments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,22 +73,22 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies.FindAsync(id);
-            if (hobby == null)
+            var temperament = await _context.Temperaments.FindAsync(id);
+            if (temperament == null)
             {
                 return NotFound();
             }
-            return View(hobby);
+            return View(temperament);
         }
 
-        // POST: Hobbies/Edit/5
+        // POST: Temperaments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,HobbySpec,HobbyName,ApplicationUserId")] Hobby hobby)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TemperamentName")] Temperament temperament)
         {
-            if (id != hobby.Id)
+            if (id != temperament.Id)
             {
                 return NotFound();
             }
@@ -101,12 +97,12 @@ namespace MentalToHell.Controllers
             {
                 try
                 {
-                    _context.Update(hobby);
+                    _context.Update(temperament);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HobbyExists(hobby.Id))
+                    if (!TemperamentExists(temperament.Id))
                     {
                         return NotFound();
                     }
@@ -117,10 +113,10 @@ namespace MentalToHell.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(hobby);
+            return View(temperament);
         }
 
-        // GET: Hobbies/Delete/5
+        // GET: Temperaments/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -128,30 +124,30 @@ namespace MentalToHell.Controllers
                 return NotFound();
             }
 
-            var hobby = await _context.Hobbies
+            var temperament = await _context.Temperaments
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (hobby == null)
+            if (temperament == null)
             {
                 return NotFound();
             }
 
-            return View(hobby);
+            return View(temperament);
         }
 
-        // POST: Hobbies/Delete/5
+        // POST: Temperaments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var hobby = await _context.Hobbies.FindAsync(id);
-            _context.Hobbies.Remove(hobby);
+            var temperament = await _context.Temperaments.FindAsync(id);
+            _context.Temperaments.Remove(temperament);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool HobbyExists(int id)
+        private bool TemperamentExists(int id)
         {
-            return _context.Hobbies.Any(e => e.Id == id);
+            return _context.Temperaments.Any(e => e.Id == id);
         }
     }
 }
