@@ -1,0 +1,104 @@
+﻿@model IEnumerable<MentalToHell_3.Models.Reports.Report>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Model/_Report.cshtml";
+}
+
+<h2>Отчеты</h2>
+
+<div>
+    <a asp-action="Create">Создать</a>
+    <form asp-controller="Reports" asp-action="Index" method="get">
+        <p>
+            Текст: <input type="text" name="SearchString">
+            <input type="submit" value="Поиск" />
+        </p>
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">
+                    Текст
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.DateSort">
+                    Дата
+                </a>
+            </th>
+        </tr>
+    </thead>
+</table>
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.UserId)
+            </td>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+            }
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Day)
+            </td>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Day)
+                </td>
+            }
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Title)
+            </td>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+            }
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Description)
+            </td>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            }
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Content)
+            </td>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+            }
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+            @foreach (var item in Model)
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a>  <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            }
+        </tr>
+    </tbody>
+</table>

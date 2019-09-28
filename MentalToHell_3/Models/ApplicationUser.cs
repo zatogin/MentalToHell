@@ -1,4 +1,5 @@
-﻿using MentalToHell_3.Models.Users;
+﻿using MentalToHell_3.Models.Reports;
+using MentalToHell_3.Models.Users;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -15,5 +16,11 @@ namespace MentalToHell_3.Models
         public virtual List<UserState> UserStates { get; set; }
         public virtual List<JobSatisfaction> JobSatisfactions { get; set; }
         public virtual List<LifeJoy> LifeJoys { get; set; }
+        //toReport
+        public virtual List<Hobby> Hobbies { get; set; }
+        public virtual List<Motivation> Motivations { get; set; }
+        public virtual List<PartyTime> PartyTimes { get; set; }
+        public virtual List<Report> Reports { get; set; }
+        public virtual List<ReportsPage> ReportsPages { get; set; }
     }
 }

@@ -1,0 +1,52 @@
+﻿@model MentalToHell_3.Models.Reports.ReportsPage
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/Model/_Report.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ReportsPage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUsers)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUsers.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hobby)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hobby.HobbyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Motivation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Motivation.MotivationText)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PartyId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PartyId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Report)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Report.Content)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

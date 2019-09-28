@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MentalToHell_3.Models;
+using MentalToHell_3.Models.Reports;
 using MentalToHell_3.Models.Users;
 using MentalToHell_3.Models.Users.Misc;
 using Microsoft.AspNetCore.Identity;
@@ -25,5 +26,10 @@ namespace MentalToHell_3.Data
         public DbSet<JobSatisfaction> JobSatisfactions { get; set; }
         public DbSet<LifeJoy> LifeJoys { get; set; }
         public DbSet<MentalToHell_3.Models.ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<Hobby> Hobbies { get; set; }
+        public DbSet<Motivation> Motivations { get; set; }
+        public DbSet<PartyTime> PartyTimes { get; set; }
+        public DbSet<Report> Reports { get; set; }
+        public DbSet<ReportsPage> ReportsPages { get; set; }
     }
 }
