@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-MentalToHell_3-1D7DA8A3-C3E8-49A7-9D82-C5D32BEDC040</UserSecretsId>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <Optimize>false</Optimize>
   </PropertyGroup>
 
   <ItemGroup>

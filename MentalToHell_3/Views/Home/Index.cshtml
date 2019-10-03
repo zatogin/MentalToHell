@@ -19,56 +19,30 @@
         <h5>Зарегистрируйтесь, или войдите, для того чтобы воспользоватся сервисом.</h5>
         <hr />
     }
-    <div>
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Про проект</a>
-                    </h2>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <h3>Добро пожаловать на сайт посвященный саморазвитию</h3>
-                        <p>Данный сайт предоставляет инструменты для:</p>
-                        <ol>
-                            <li>Ведения личного дневника;</li>
-                            <li>Саморазвития личности путем самопознания;</li>
-                            <li>Поиска ресурсов для возможности развивать навыки написания текста и личных записей;</li>
-                            <li>Квалифицированой помощи психолога основанного на Ваших записях;</li>
-                            <li>Быстрого поиска записей по датам, ключевым словам;</li>
-                        </ol>
-                    </div>
-                </div>
+        <div class="main-panel">
+            <div>
+                <h3>Добро пожаловать на сайт посвященный саморазвитию</h3>
+                <p>Данный сайт предоставляет инструменты для:</p>
+                <ol>
+                    <li>Ведения личного дневника;</li>
+                    <li>Саморазвития личности путем самопознания;</li>
+                    <li>Поиска ресурсов для возможности развивать навыки написания текста и личных записей;</li>
+                    <li>Квалифицированой помощи психолога основанного на Ваших записях;</li>
+                    <li>Быстрого поиска записей по датам, ключевым словам;</li>
+                </ol>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Команда разработчиков</a>
-                    </h2>
+            <hr />
+            <div class="panel-body">
+                <hr />
+                <div>
+                    @await Html.PartialAsync("_Contact")
                 </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+                <hr />
+                <div>
+                    @await Html.PartialAsync("_Privacy")
                 </div>
+                <hr />
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Контакты</a>
-                    </h2>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                </div>
-            </div>
+            
         </div>
-    </div>
 </div>

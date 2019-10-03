@@ -38,10 +38,8 @@ namespace MentalToHell_3
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<ApplicationUser, ApplicationRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultUI()
-            .AddDefaultTokenProviders();
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -35,18 +35,18 @@ h1 {
     text-align: left !important;
 }
 
-.panel-default > .panel-heading {
+#main-panel {
     background-color: #ACBEBE !important;
     border-color: none !important;
 }
 
-.panel-heading > h2 > a {
+#main-panel > h2 > a {
     font-size: 1.6em !important;
 }
-.panel-heading > h2 > a:hover {
+#main-panel > h2 > a:hover {
     color: #20232A !important;
 }
-.panel-body {
+#main-panel > div {
     border-color: #20232A !important;
     height: 40vh;
     padding: 35px;
