@@ -8,7 +8,7 @@ html {
 }
 
 #main-body {
-    border: 25px ridge #20232A !important;
+    border: 50px ridge #20232A !important;
     width: inherit;
     min-height: inherit;
     margin: 0;

@@ -9,12 +9,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MentalToHell_3.Data;
+using MentalToHellFinal.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MentalToHell_3.Models;
 
-namespace MentalToHell_3
+namespace MentalToHellFinal
 {
     public class Startup
     {
@@ -38,13 +37,8 @@ namespace MentalToHell_3
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-           // services.AddDefaultIdentity<ApplicationUser>()
-                //.AddEntityFrameworkStores<ApplicationDbContext>();
-
-            services.AddIdentity<ApplicationUser, ApplicationRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultUI()
-                .AddDefaultTokenProviders();
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

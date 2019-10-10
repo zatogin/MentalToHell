@@ -22,10 +22,12 @@ namespace MentalToHell_3.Controllers.Reports
         // GET: Reports
         public async Task<IActionResult> Index(string searchString, SortStateReport sortOrder = SortStateReport.NameAsc)
         {
+            
             var applicationDbContext = _context.Reports.Include(l => l.ApplicationUser);
 
             var rep = from r in _context.Reports
                       select r;
+            
             if (!String.IsNullOrEmpty(searchString))
             {
                 rep = rep.Where(s => s.Title.Contains(searchString));

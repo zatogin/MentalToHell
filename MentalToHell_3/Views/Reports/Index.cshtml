@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<MentalToHell_3.Models.Reports.Report>
-
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/Model/_Report.cshtml";
@@ -33,83 +34,104 @@
     </thead>
 </table>
 <div class="table-responsive-lg">
-    <table class="table">
-        <tbody>
-            <tr>
-                <td>
-                    @Html.DisplayNameFor(model => model.UserId)
-                </td>
-                @foreach (var item in Model)
-                {
+        <table class="table">
+            <tbody>
+                <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.UserId)
+                        @Html.DisplayNameFor(model => model.UserId)
                     </td>
-                }
-            </tr>
-            <tr>
-                <td>
-                    @Html.DisplayNameFor(model => model.Day)
-                </td>
-                @foreach (var item in Model)
-                {
+                    @foreach (var item in Model)
+                    {
+                        @if (UserManager.GetUserId(User) == item.UserId.ToString())
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserId)
+                            </td>
+                        }
+                     }
+                </tr>
+                <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Day)
+                        @Html.DisplayNameFor(model => model.Day)
                     </td>
-                }
-            </tr>
-            <tr>
-                <td>
-                    @Html.DisplayNameFor(model => model.Title)
-                </td>
-                @foreach (var item in Model)
-                {
+                    @foreach (var item in Model)
+                    {
+                        @if (UserManager.GetUserId(User) == item.UserId.ToString())
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Day)
+                            </td>
+                        }
+                    }
+                    </tr>
+                <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Title)
+                        @Html.DisplayNameFor(model => model.Title)
                     </td>
-                }
-            </tr>
-            <tr>
-                <td>
-                    @Html.DisplayNameFor(model => model.Description)
-                </td>
-                @foreach (var item in Model)
-                {
+                    @foreach (var item in Model)
+                    {
+                        @if (UserManager.GetUserId(User) == item.UserId.ToString())
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                        }
+                    }
+                    </tr>
+                <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Description)
+                        @Html.DisplayNameFor(model => model.Description)
                     </td>
-                }
-            </tr>
-            <tr>
-                <td>
-                    @Html.DisplayNameFor(model => model.Content)
-                </td>
-                @foreach (var item in Model)
-                {
+                    @foreach (var item in Model)
+                    {
+                        @if (UserManager.GetUserId(User) == item.UserId.ToString())
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                        }
+                    }
+                    </tr>
+                <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Content)
+                        @Html.DisplayNameFor(model => model.Content)
                     </td>
-                }
-            </tr>
-            <tr>
-                <td></td>
-                @foreach (var item in Model)
-                {
+                    @foreach (var item in Model)
+                    {
+                        @if (UserManager.GetUserId(User) == item.UserId.ToString())
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Content)
+                            </td>
+                        }
+                    }
+                    </tr>
+                <tr>
+                    <td></td>
+                    @foreach (var item in Model)
+                    {
+                        @if (UserManager.GetUserId(User) == item.UserId.ToString())
+                        {
+                            <td>
+                                <a href="#">Добавить отношение</a>
+                            </td>
+                        }
+                    }
+                    </tr>
+                <tr>
                     <td>
-                        <a href="#">Добавить отношение</a>
+                        &nbsp;
                     </td>
-                }
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                @foreach (var item in Model)
-                {
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a>  <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
-                    </td>
-                }
-            </tr>
-        </tbody>
-    </table>
+                    @foreach (var item in Model)
+                    {
+                        @if (UserManager.GetUserId(User) == item.UserId.ToString())
+                        {
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a>  <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                            </td>
+                        }
+                    }
+                    </tr>
+            </tbody>
+        </table>
 </div>
