@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="~/css/site.css" />
         <!-- inside <head> -->
         <link rel="stylesheet" href="~/vendor.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap&subset=latin-ext" rel="stylesheet">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,7 +20,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body class="main-body-content">
     <!--<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -46,29 +48,26 @@
     <div class="body-content">
         <header>
             <div class="list-inline row">
-                <h1 id="main-header" class="col-sm-7">Сервис "Личный дневник"</h1>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <a id="start-profile" class="col-sm-1" asp-area="" asp-controller="UserStates" asp-action="Details">Начать</a>
-                }
-                <div id="main-login" class="col-sm-2">
+                <h1 id="main-header" class="col-sm-5 main-h">Сервис "Личный дневник"</h1>
+                
+                <div id="main-login" class="col-sm-7">
                     <partial name="_LoginPartial" />
                 </div>
             </div>
             @if (!User.Identity.IsAuthenticated)
             {
                 <hr />
-                <h5>Зарегистрируйтесь, или войдите, для того чтобы воспользоватся сервисом.</h5>
+                <h2 class="main-h">Зарегистрируйтесь, или войдите, для того чтобы воспользоватся сервисом.</h2>
                 <hr />
             }
         </header>
-        <hr />
+
         <main>
             @RenderBody()
         </main>
-        <hr />
-        <footer class="navbar-fixed-bottom">
-            <p>&copy; 2019 - MentalToHellFinal</p>
+
+        <footer class="">
+            <h5 class="main-h">&copy; 2019 - MentalToHellFinal</h5>
         </footer>
     </div>
 

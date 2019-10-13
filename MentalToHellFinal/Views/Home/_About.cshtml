@@ -2,9 +2,17 @@
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-<div>
-    <h3>Добро пожаловать на сайт посвященный саморазвитию</h3>
-    <p>Данный сайт предоставляет инструменты для:</p>
+<div class="main-part-content" id="main-about">
+    <h2 class="main-h">Добро пожаловать на сайт посвященный саморазвитию</h2>
+
+    <div class="start-it">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a id="start-profile" class="" asp-area="" asp-controller="UserStates" asp-action="Details">Начать</a>
+        }
+    </div>
+
+    <h5>Данный сайт предоставляет инструменты для:</h5>
     <ol>
         <li>Ведения личного дневника;</li>
         <li>Саморазвития личности путем самопознания;</li>
@@ -12,4 +20,5 @@
         <li>Квалифицированой помощи психолога основанного на Ваших записях;</li>
         <li>Быстрого поиска записей по датам, ключевым словам;</li>
     </ol>
+    
 </div>
