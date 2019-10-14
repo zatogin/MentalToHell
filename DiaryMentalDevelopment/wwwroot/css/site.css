@@ -1,0 +1,146 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+/*Main page
+//menu*/
+.main-pills {
+    display: flex;
+    justify-content: center;
+}
+
+/*
+    Main content page
+*/
+
+.main-body-content {
+    border: 25px solid #ACBEBE;
+    background-color: #F4F4EF;
+    width: inherit;
+    min-height: inherit;
+    padding: 2em 5em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-h {
+    font-family: 'Libre Baskerville', serif !important;
+    text-align: center;
+    color: #A01D26;
+}
+
+hr {
+    border: 2px solid #20232A !important;
+}
+
+#main-index {
+    margin-top: 3em;
+}
+
+.start-it {
+    display: flex;
+    justify-content: center;
+}
+
+#start-profile {
+    padding: 10px;
+    font-size: 2em !important;
+    text-align: center;
+}
+
+.reg-lay, #start-profile {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+    .reg-lay > li > a, .reg-lay > li > button, #start-profile {
+        font-family: 'Libre Baskerville', serif !important;
+        text-align: center;
+        color: #A01D26;
+    }
+
+    .reg-lay > li > button {
+        padding-top: 12px !important;
+    }
+
+        .reg-lay > li > a:hover, .reg-lay > li > button:hover, .reg-lay > li > a:active, .reg-lay > li > button:active, #start-profile:hover, #start-profile:active {
+            text-decoration: none;
+            color: #A01D26;
+            background-color: #ACBEBE !important;
+        }
+
+#main-index > .tab-pane {
+}
+
+.main-pills > li > a {
+    text-align: center;
+    border: 1px solid #20232A;
+    width: 8em;
+    margin: 1em 2em;
+    font-size: 1.5em;
+    color: #A01D26;
+    border-radius: 18px;
+}
+
+.main-pills > li.active > a {
+    background-color: #20232A;
+}
+
+    .main-pills > li > a:hover, .main-pills > li.active > a:focus {
+        background-color: #A01D26;
+        color: #F4F4FE;
+    }
+
+    .main-pills > li.active > a:hover, .main-pills > li.active > a:focus {
+        background-color: #20232A;
+    }
+
+.main-tab-content {
+    margin: 2em;
+    padding: 1em;
+    border: 2px dotted #ACBEBE;
+    height: 45vh;
+    overflow-y: auto;
+}
+
+/*
+    Footer
+*/
+footer {
+}

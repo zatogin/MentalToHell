@@ -14,6 +14,9 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Services\" />
+    <Folder Include="Models\Conclusion\" />
+    <Folder Include="Models\WhatTo\" />
+    <Folder Include="Models\Reports\" />
   </ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalToHell2", "..\MentalT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalToHell_3", "MentalToHell_3\MentalToHell_3.csproj", "{4BA3CDD5-F241-4B80-B4B2-0916C9D49480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentalToHellFinal", "MentalToHellFinal\MentalToHellFinal.csproj", "{3078CA3B-9479-4ADE-B199-BEB61D5BD31A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentalToHellFinal", "MentalToHellFinal\MentalToHellFinal.csproj", "{3078CA3B-9479-4ADE-B199-BEB61D5BD31A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,12 @@
 
 <div class="main-part-content" id="main-contact">
     <h2 class="main-h">Контатки</h2>
+    <div class="start-it">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a id="start-profile" class="" asp-area="" asp-controller="UserStates" asp-action="Details">Начать</a>
+        }
+    </div>
     <div class="">
-
     </div>
 </div>

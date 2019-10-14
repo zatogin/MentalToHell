@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="main-index">
+    <ul class="nav nav-pills main-pills" role="tablist">
+        <li class="active"><a data-toggle="tab" href="#home">О проекте</a></li>
+        <li><a data-toggle="tab" href="#menu1">Команда</a></li>
+        <li><a data-toggle="tab" href="#menu2">Правила</a></li>
+    </ul>
+    <div class="tab-content main-tab-content">
+        <div id="home" class="tab-pane fade in active">
+            @await Html.PartialAsync("_About")
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            @await Html.PartialAsync("_Contact")
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            @await Html.PartialAsync("_Privacy")
+        </div>
+    </div>
+</div>
