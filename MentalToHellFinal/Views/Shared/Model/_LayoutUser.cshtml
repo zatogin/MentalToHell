@@ -26,26 +26,15 @@
         <header>
             <div class="list-inline row">
                 <h1 id="main-header" class="col-sm-7">Сервис "Личный дневник"</h1>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <a id="start-profile" class="col-sm-1" asp-area="" asp-controller="UserStates" asp-action="Details">Начать</a>
-                }
-                <div id="main-login" class="col-sm-2">
+                
+                <div id="main-login" class="col-sm-4">
                     <partial name="_LoginPartial" />
                 </div>
             </div>
-            @if (!User.Identity.IsAuthenticated)
-            {
-                <hr />
-                <h5>Зарегистрируйтесь, или войдите, для того чтобы воспользоватся сервисом.</h5>
-                <hr />
-            }
         </header>
-        <hr />
         <main>
             @RenderBody()
         </main>
-        <hr />
         <footer class="navbar-fixed-bottom">
             <p>&copy; 2019 - MentalToHellFinal</p>
         </footer>

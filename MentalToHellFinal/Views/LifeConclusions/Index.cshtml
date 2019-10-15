@@ -1,0 +1,86 @@
+﻿@model IEnumerable<MentalToHellFinal.Models.CustomUser.LifeConclusion>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<MentalToHellFinal.Models.CustomUser.ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Model/_LayoutUser.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    <a asp-action="Create">Create New</a>
+    <form asp-controller="LifeConclusions" asp-action="Index" method="get">
+        <p>
+            Текст: <input type="text" name="SearchString">
+            <input type="submit" value="Поиск" />
+        </p>
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">
+                    Текст
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.DateSort">
+                    Дата
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.DateSort">
+                    Заголовок
+                </a>
+            </th>
+        </tr>
+    </thead>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUsers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LifeConclusionHead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LifeConExpl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LifeConDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationUsers.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LifeConclusionHead)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LifeConExpl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LifeConDate)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
