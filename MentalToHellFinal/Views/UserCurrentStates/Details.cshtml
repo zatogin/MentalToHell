@@ -5,3 +5,47 @@
     Layout = "~/Views/Shared/Model/_LayoutUser.cshtml";
 }
 
+<div id="user-menu">
+    <div>
+        <h1>Добро пожаловать!</h1>
+        <h4>Пожалуйста, выберите категорию:</h4>
+        <br />
+        <ul class="list-inline row" id="start-list">
+            <li class="col-sm-3">
+                <ul class="start-list">
+                    <li><a asp-area="" asp-controller="RelationDays" asp-action="Create">Отношение день</a></li>
+                    <li><a asp-area="" asp-controller="RelationWeeks" asp-action="Create">Отношение неделя</a></li>
+                    <li><a asp-area="" asp-controller="RelationMonths" asp-action="Create">Отношение месяц</a></li>
+                    <li><a asp-area="" asp-controller="RelationYears" asp-action="Create">Отношение год</a></li>
+                    <li><a asp-area="" asp-controller="RelationPeriods" asp-action="Create">Отношение период</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-3">
+                <ul class="start-list">
+                    <li><a asp-area="" asp-controller="Hobbies" asp-action="Create">Хобби</a></li>
+                    <li><a asp-area="" asp-controller="Motivations" asp-action="Create">Мотивация</a></li>
+                    <li><a asp-area="" asp-controller="PartyTimes" asp-action="Create">Вечеринки</a></li>
+                    <li><a asp-area="" asp-controller="Reports" asp-action="Create">Отчеты</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-3">
+                <ul class="start-list">
+                    <li><a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Профиль</a></li>
+                    <li><a asp-area="" asp-controller="UserStates" asp-action="Index">Профиль личности</a></li>
+                    <li><a asp-area="" asp-controller="JobSatisfactions" asp-action="Create">О работе</a></li>
+                    <li><a asp-area="" asp-controller="LifeJoys" asp-action="Create">О жизни</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-3">
+                <ul class="start-list">
+                    <li><a asp-area="" asp-controller="ToReads" asp-action="Create">Что почитать</a></li>
+                    <li><a asp-area="" asp-controller="ToTastes" asp-action="Create">Что попробовать</a></li>
+                    <li><a asp-area="" asp-controller="ToThinks" asp-action="Create">О чем подумать</a></li>
+                    <li><a asp-area="" asp-controller="ToWatches" asp-action="Create">Что посмотреть</a></li>
+                    <li><a asp-area="" asp-controller="WhereToBes" asp-action="Create">Где побывать</a></li>
+                    <li><a asp-area="" asp-controller="InfoTables" asp-action="Index">Список источников</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

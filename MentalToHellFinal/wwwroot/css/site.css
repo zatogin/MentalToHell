@@ -15,6 +15,9 @@ html {
     
 }
 
+.container-fluid, main, header, footer {
+    padding: 0 !important;
+}
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
@@ -53,7 +56,14 @@ html {
 
 .main-body-content {
     border: 25px solid #ACBEBE;
-    background-color: #F4F4EF;
+    background: #f4f4ef;
+    background: -moz-linear-gradient(top, #f4f4ef 0%, #e6e6e6 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #f4f4ef), color-stop(100%, #e6e6e6));
+    background: -webkit-linear-gradient(top, #f4f4ef 0%, #e6e6e6 100%);
+    background: -o-linear-gradient(top, #f4f4ef 0%, #e6e6e6 100%);
+    background: -ms-linear-gradient(top, #f4f4ef 0%, #e6e6e6 100%);
+    background: linear-gradient(to bottom, #f4f4ef 0%, #e6e6e6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4ef', endColorstr='#e6e6e6', GradientType=0 );
     width: inherit;
     min-height: inherit;
     padding: 2em 5em;
@@ -130,6 +140,22 @@ hr {
     border: 2px dotted #ACBEBE;
     height: 45vh;
     overflow-y: auto;
+}
+
+table {
+    margin: 0 !important;
+}
+.table {
+    max-width: none !important;
+    max-height: 80vh;
+    overflow-y: auto;
+
+}
+.table > thead > tr > th:first-child, .table > tbody > tr > td:first-child {
+    width: 15vw !important;
+}
+.dates {
+    width: 8vw !important;
 }
 
 /*

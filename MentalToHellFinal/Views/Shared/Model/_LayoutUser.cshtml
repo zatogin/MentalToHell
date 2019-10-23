@@ -7,35 +7,86 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/user.css" />
+        <link rel="stylesheet" href="~/css/Animation.css" />
         <!-- inside <head> -->
-        <link rel="stylesheet" href="~/vendor.min.css" />
+        <link rel="stylesheet" href="~/css/vendor.min.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/user.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body class="container-fluid">
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="body-content">
-        <header>
-            <div class="list-inline row">
-                <h1 id="main-header" class="col-sm-7">Сервис "Личный дневник"</h1>
-                
-                <div id="main-login" class="col-sm-4">
-                    <partial name="_LoginPartial" />
+    <div class="body-content row">
+        <header class="col-md-2 col-lg-2" id="side-bar-header">
+            <!--<div class="">
+        <h1 id="main-header" class="">Сервис "Личный дневник"</h1>
+        <nav class="">
+            <ul class="">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="JobConclusions" asp-action="Index">Job</a></li>
+                <li><a asp-area="" asp-controller="LifeConclusions" asp-action="Index">Life</a></li>
+                <li><a asp-area="" asp-controller="UserCurrentStates" asp-action="Index">User state</a></li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </nav>
+    </div>
+    <div class="ui sidebar visible fixed inverted main menu screen tablet mobile only">
+        <a class="launch icon item sidebar-toggle">
+            <i class="sidebar icon"></i>
+        </a>
+    </div>-->
+            <div class="nav-side-menu">
+                <div class="brand">Сервис <br />"Личный дневник"</div>
+                <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                <div class="menu-list">
+                    <ul id="menu-content" class="menu-content collapse out">
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="fa fa-dashboard fa-lg"></i> Домой
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="JobConclusions" asp-action="Index">
+                                <i class="fa fa-dashboard fa-lg"></i> Отношение к работе
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="LifeConclusions" asp-action="Index">
+                                <i class="fa fa-dashboard fa-lg"></i> Отношение к жизни
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="UserCurrentStates" asp-action="Index">
+                                <i class="fa fa-dashboard fa-lg"></i> Профиль личности
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="UserCurrentStates" asp-action="Details">
+                                <i class="fa fa-dashboard fa-lg"></i> Полный список
+                            </a>
+                        </li>
+                        <li>
+                            <partial name="_LoginPartial" />
+                        </li>
+                    </ul>
                 </div>
             </div>
         </header>
-        <main>
+        <main class="col-md-10 col-md-10">
             @RenderBody()
         </main>
-        <footer class="navbar-fixed-bottom">
+        <footer class="">
             <p>&copy; 2019 - MentalToHellFinal</p>
         </footer>
     </div>
@@ -44,8 +95,9 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/Animation.js" asp-append-version="true"></script>
         <!-- at the end of <body> -->
-        <script src="~/vendor.min.js"></script>
+        <script src="~/js/vendor.min.js"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"

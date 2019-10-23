@@ -6,78 +6,125 @@
     Layout = "~/Views/Shared/Model/_LayoutUser.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Профиль Личности</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ApplicationUsers)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Temperament)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Credo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Character)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Religion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Birthday)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ApplicationUsers.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Sex.SexName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Gender.GenderName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Temperament.TemperamentName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Credo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Character)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Religion.ReligionType)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Birthday)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
+@if (Model == null)
+{
+    <div>
+        <a asp-action="Create" class="user-action">Добавить</a>
+    </div>
+}
+<div class="row">
+    <ul id="curr-user-st" class="col-sm-12">
+        <li>
+            Пользователь
+            <ul class="curr-user-el">
+                @foreach (var item in Model)
+                {
+                    @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+                    {
+                        <li>@Html.DisplayFor(modelItem => item.ApplicationUsers.Id)</li>
+                    }
                 }
-         }
-    </tbody>
-</table>
+            </ul>
+        </li>
+        <li>
+            Пол:
+            <ul class="curr-user-el">
+                @foreach (var item in Model)
+                {
+                    @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+                    {
+                        <li>@Html.DisplayFor(modelItem => item.Sex.SexName)</li>
+                    }
+                }
+            </ul>
+        </li>
+        <li>
+            Гендер:
+            <ul class="curr-user-el">
+                @foreach (var item in Model)
+                {
+                    @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+                    {
+                        <li>@Html.DisplayFor(modelItem => item.Gender.GenderName)</li>
+                    }
+                }
+            </ul>
+        </li>
+        <li>
+            Темперамент:
+            <ul class="curr-user-el">
+                @foreach (var item in Model)
+                {
+                    @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+                    {
+                        <li>@Html.DisplayFor(modelItem => item.Temperament.TemperamentName)</li>
+                    }
+                }
+            </ul>
+        </li>
+        <li>
+            @Html.DisplayNameFor(model => model.Credo)
+            <ul class="curr-user-el">
+                @foreach (var item in Model)
+                {
+                    @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+                    {
+                        <li>@Html.DisplayFor(modelItem => item.Credo)</li>
+                    }
+                }
+            </ul>
+        </li>
+        <li>
+            Характер:
+            <ul class="curr-user-el">
+                @foreach (var item in Model)
+                {
+                    @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+                    {
+                        <li>@Html.DisplayFor(modelItem => item.Character)</li>
+                    }
+                }
+            </ul>
+        </li>
+        <li>
+            Религия:
+            <ul class="curr-user-el">
+                @foreach (var item in Model)
+                {
+                    @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+                    {
+                        <li>@Html.DisplayFor(modelItem => item.Religion.ReligionType)</li>
+                    }
+                }
+            </ul>
+        </li>
+        <li>
+            @Html.DisplayNameFor(model => model.Birthday)
+            <ul class="curr-user-el">
+                @foreach (var item in Model)
+                {
+                    @if (UserManager.GetUserId(User) == item.ApplicationUserId.ToString())
+                    {
+                        <li>@Html.DisplayFor(modelItem => item.Birthday)</li>
+                    }
+                }
+            </ul>
+        </li>
+    </ul>
+    <ul class="col-sm-4 list-inline">
+        <li>
+            @foreach (var item in Model)
+            {
+                <a asp-action="Edit" class="user-action" asp-route-id="@item.Id">Изменить</a>
+            }
+        </li>
+        <li>
+            @foreach (var item in Model)
+            {
+                <a asp-action="Delete" class="user-action" asp-route-id="@item.Id">Удалить</a>
+            }
+        </li>
+    </ul>
+</div>

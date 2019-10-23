@@ -42,18 +42,17 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ApplicationUsers)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.LifeConclusionHead)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.LifeConExpl)
             </th>
-            <th>
+            <th class="dates">
                 @Html.DisplayNameFor(model => model.LifeConDate)
             </th>
-            <th></th>
+            <th>
+
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -63,15 +62,12 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ApplicationUsers.Id)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.LifeConclusionHead)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.LifeConExpl)
                     </td>
-                    <td>
+                    <td class="dates">
                         @Html.DisplayFor(modelItem => item.LifeConDate)
                     </td>
                     <td>
